@@ -104,6 +104,11 @@ const patientSchema = new Schema( {
       type: [Date],
     },
     progressNote: [progressNoteSchema],
+
+    dischargeSum: {
+      type: [String], 
+      default: null
+    },
 },
 {
     timestamps: true,

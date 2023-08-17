@@ -24,6 +24,7 @@ var usersRouter = require('./routes/users');
 var patientsRouter = require('./routes/patients');
 var vitalsRouter = require('./routes/vitals');
 var progressNoteRouter = require('./routes/progressNote');
+var chatGPTRouter = require('./routes/chatGPTs')
 
 var app = express();
 
@@ -61,6 +62,7 @@ app.use('/users', usersRouter);
 app.use("/", vitalsRouter)
 app.use("/", progressNoteRouter)
 app.use('/patients', patientsRouter);
+app.use('/ai', chatGPTRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
