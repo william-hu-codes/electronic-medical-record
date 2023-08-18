@@ -136,28 +136,48 @@ async function generateDS(req, res, next) {
     try {
         let allNotes = ""
         const patient = await Patient.findById(req.params.patientId)
-        console.log("found patient", patient)
-        function convert(array) {
-            array.forEach(function(element) {
-                allNotes +=  element
+
+
+        if(patient.dischargeSum === null){
+
+            console.log("found patient", patient)
+            function convert(array) {
+                array.forEach(function(element) {
+                    allNotes +=  element
+                })
+            }
+            convert(patient.progressNotes)
+            const completion = await openai.chat.completions.create({
+                messages: [{ role: 'user', content: `write me a hospital discharge summary for a patient named ${patient.name} given the following progress notes: ${allNotes}` }],
+                model: 'gpt-3.5-turbo',
+            });
+            const output = completion.choices[0].message.content
+
+            let formattedOutput = lineBreak(output)
+
+            patient.dischargeSum = output;
+
+            await patient.save()
+
+            res.render("patients/discharge-summary",{
+                title: `${patient.name}: Discharge Summary`,
+                patient,
+                formattedOutput
             })
         }
-        convert(patient.progressNotes)
-        const completion = await openai.chat.completions.create({
-            messages: [{ role: 'user', content: `write me a hospital discharge summary for a patient named ${patient.name} given the following progress notes: ${allNotes}` }],
-            model: 'gpt-3.5-turbo',
-          });
-        const output = completion.choices[0].message.content
+            else{
 
-        let formattedOutput = lineBreak(output)
+                let formattedOutput = lineBreak(patient.dischargeSum)
 
-        res.render("patients/discharge-summary",{
-            title: `${patient.name}: Discharge Summary`,
-            patient,
-            formattedOutput
-        })
+                res.render("patients/discharge-summary",{
+                    title: `${patient.name}: Pre-generated Discharge Summary`,
+                    patient,
+                    formattedOutput
+                })
+            }
 
-    }catch(err) {
+    }
+    catch(err) {
         console.log(err)
         next(Error(err))
     }

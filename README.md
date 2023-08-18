@@ -5,6 +5,8 @@
 # USER-EXPERIENCE
     -The user will be greeted by our application's intro page. From there, the user will be able to sign into our application using google authentication. 
 
+    
+
     -Based on the user's administration status certain features will or will not be available to said user. 
 
     -Assuming the user is of administration status, the user will be able to view all patients admitted in our EMR system record at the patient index page. Patients can also be added from the patient index page, where the user will be taken to a form to fill out all required information on the soon to be admitted patient. The user will also be able to filter patients based on their admission status(admitted or discharged) or all patients on record. If the user selected the "all patients" feature, the index will present all patients on record regradless of admission status. Patients will be highlighted in a light grey tint based on their discharged status( discharged patients will be light grey)
