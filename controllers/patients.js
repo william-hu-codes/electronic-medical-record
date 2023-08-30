@@ -108,9 +108,14 @@ async function show (req, res, next) {
     }
 }
 
+
+//
 async function dischargeAdmit (req, res, next) {
     try{
         const patient = await Patient.findById(req.params.patientId);
+        
+        
+
         // console.log(patient)
         patient.discharged = patient.discharged ? false : true;
         if (patient.discharged) {
@@ -128,7 +133,7 @@ async function dischargeAdmit (req, res, next) {
 }
 
 async function generateDS(req, res, next) {
-    console.log("generating ds summary")
+    console.log("generating ds summary...")
     const openai = new OpenAiApi({
         apiKey: process.env.OPENAI_API_KEY,
     });
@@ -137,7 +142,7 @@ async function generateDS(req, res, next) {
         let allNotes = ""
         const patient = await Patient.findById(req.params.patientId)
 
-
+        //here
         if(patient.dischargeSum === null){
 
             console.log("found patient", patient)
@@ -157,6 +162,8 @@ async function generateDS(req, res, next) {
 
             patient.dischargeSum = output;
 
+
+            //here
             await patient.save()
 
             res.render("patients/discharge-summary",{
@@ -164,13 +171,14 @@ async function generateDS(req, res, next) {
                 patient,
                 formattedOutput
             })
-        }
+        }   
+            //here
             else{
 
                 let formattedOutput = lineBreak(patient.dischargeSum)
 
                 res.render("patients/discharge-summary",{
-                    title: `${patient.name}: Pre-generated Discharge Summary`,
+                    title: `${patient.name}: Archived Discharge Summary`,
                     patient,
                     formattedOutput
                 })
