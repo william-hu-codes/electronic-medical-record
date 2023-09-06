@@ -2,6 +2,10 @@
 
 The name of the this application is called Wavelength. This web aplication is a simple but highly functional electronic medical record system that could be implemented at a small urgent care center or emergency room. Our user experience is both provider- and patient-centric, creating a logical organizational structure that will help streamline workflow for providers and facilitate a more integrated care-delivery system for each patient.
 
+[GitHub Page](https://github.com/william-hu-codes/electronic-medical-record)
+
+[Deployed App](https://wavelength-medical-records-50e817316e66.herokuapp.com/?fbclid=IwAR3qqvgpBvcA0vYMgNmVAxtsXeKd3JTlKcfBz8ps_Fxcilj5tG2uiFxbOaw)
+
 ## User-Experience / Getting Started
 
 ### Home Page
@@ -109,7 +113,7 @@ User Profile showcasing result of assigning a patient
     
 ### Contributors
 - William Hu - [LinkedIn](www.linkedin.com/in/william-wl-hu) | [GitHub](https://github.com/william-hu-codes)
-- Robert Hayden - [LinkedIn](https://www.linkedin.com/in/robert-m-hayden/) | [GitHub](https://github.com/rleandre)
+- Robert Hayden - [LinkedIn](https://www.linkedin.com/in/robert-m-hayden/) | [GitHub](https://github.com/rmhayden)
 - Reginald Leandre - [LinkedIn](https://www.linkedin.com/in/reginald-leandre-186230236/) | [GitHub](https://github.com/rleandre)
 
 ### Roles: 
@@ -118,7 +122,3 @@ User Profile showcasing result of assigning a patient
 - Git wrangler - Will
 - Design lead - Rob(Will/reggie)	 
 - Research / documentation lead - Reggie/Will/Rob
-
-[GitHub Page](https://github.com/william-hu-codes/electronic-medical-record)
-
-[Deployed App](https://wavelength-medical-records-50e817316e66.herokuapp.com/?fbclid=IwAR3qqvgpBvcA0vYMgNmVAxtsXeKd3JTlKcfBz8ps_Fxcilj5tG2uiFxbOaw)
