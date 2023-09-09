@@ -112,7 +112,7 @@ User Profile showcasing result of assigning a patient
 ## Team and Primary/Lead Roles:
     
 ### Contributors
-- William Hu - [LinkedIn](https://www.linkedin.com/in/william-wl-hu) | [GitHub](https://github.com/william-hu-codes)
+- William Hu - [LinkedIn](https://www.linkedin.com/in/william-wl-hu/) | [GitHub](https://github.com/william-hu-codes)
 - Robert Hayden - [LinkedIn](https://www.linkedin.com/in/robert-m-hayden/) | [GitHub](https://github.com/rmhayden)
 - Reginald Leandre - [LinkedIn](https://www.linkedin.com/in/reginald-leandre-186230236/) | [GitHub](https://github.com/rleandre)
 
