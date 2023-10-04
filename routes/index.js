@@ -4,7 +4,7 @@ const passport = require('passport');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Wavelengths: EMR' });
+  res.render('index', { title: 'Wavelength: EMR' });
 });
 
 // Google OAuth login route
